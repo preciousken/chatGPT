@@ -11,9 +11,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(function(err, req, res, next) {
+    try {
+        
     res.header("Access-Control-Allow-Origin", "https://www.sandbox.paypal.com");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    } catch (err) {
     next(err);
+    }
     });
 
     // configuring the OpenAI
