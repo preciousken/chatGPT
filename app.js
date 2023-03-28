@@ -16,7 +16,6 @@ app.use(function(err, req, res, next) {
     next(err);
     });
 
-
     // configuring the OpenAI
 const configuration = new Configuration({
   apiKey: process.env.OPEN_AI_KEY,
